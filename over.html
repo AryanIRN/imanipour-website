@@ -11,13 +11,12 @@
             theme: {
                 extend: {
                     colors: {
-                        gold: '#C8A96E',
-                        'gold-light': '#E2CFA0',
-                        'gold-dark': '#A07C3E',
-                        cream: '#F5EFE4',
-                        beige: '#EDE3D4',
-                        'off-white': '#FAFAF7',
-                        'rich-black': '#0A0906',
+                        'desert-taupe': '#907F71', 
+                        'taupe-light': '#D9CFC1',
+                        'taupe-dark': '#5E5249',
+                        'rich-black': '#1A1816',
+                        'soft-cream': '#F5F1ED',
+                        'off-white': '#FAFAF9',
                     },
                     fontFamily: {
                         display: ['"Cormorant Garamond"', 'serif'],
@@ -32,13 +31,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
-        .gold-gradient-text { 
-            background: linear-gradient(135deg, #A07C3E 0%, #E2CFA0 45%, #C8A96E 70%, #A07C3E 100%); 
-            -webkit-background-clip: text; 
-            -webkit-text-fill-color: transparent; 
-            display: inline-block; 
-        }
-        
         /* Mobiel Menu Fix */
         @media (max-width: 767px) {
             #nav-menu.open { display: flex !important; }
@@ -49,13 +41,19 @@
 
     <div data-include="layout/nav.html"></div>
 
-    <header class="pt-48 pb-24 bg-cream text-center relative overflow-hidden">
+    <header class="pt-48 pb-24 bg-soft-cream text-center relative overflow-hidden">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-px bg-desert-taupe/30"></div>
         <div class="w-[88%] max-w-3xl mx-auto">
-            <span class="text-gold uppercase tracking-[0.35em] font-medium text-[0.68rem] block mb-5">Het gezicht achter de salon</span>
-            <h1 class="font-display font-light italic text-rich-black mb-4 text-6xl">
-                Over <span class="gold-gradient-text">Jennifer</span>
+            <span class="text-desert-taupe uppercase tracking-[0.45em] font-medium text-[0.6rem] block mb-6">Ambachtelijk vakmanschap</span>
+            <h1 class="text-rich-black flex flex-col items-center leading-none mb-8" 
+                style="font-size: clamp(2.5rem, 6vw, 4.5rem);">
+                <span class="font-sans font-light uppercase tracking-[0.15em] text-[0.45em] mb-4 opacity-70">Over</span>
+                <span class="font-display italic font-light">Jennifer</span>
             </h1>
-            <div class="w-14 h-px bg-gold/50 mx-auto mt-5 mb-8"></div>
+            <div class="w-12 h-px bg-desert-taupe/30 mx-auto mt-5 mb-8"></div>
+        </div>
+        <div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.02]">
+            <span class="font-display italic text-[30rem] text-desert-taupe">J</span>
         </div>
     </header>
 
@@ -64,39 +62,41 @@
             
             <div class="w-full lg:w-1/2">
                 <div class="relative">
-                    <div class="aspect-[4/5] bg-cream overflow-hidden border border-gold/10 shadow-2xl">
+                    <div class="aspect-[4/5] bg-soft-cream overflow-hidden border border-desert-taupe/10 shadow-2xl">
                         <img src="fotos/over/jennifer.png" alt="Jennifer - Extensions & More" class="w-full h-full object-cover transition-all duration-700">
                     </div>
-                    <div class="absolute -bottom-6 -right-6 w-32 h-32 border-r border-b border-gold/30"></div>
+                    <div class="absolute -bottom-6 -right-6 w-32 h-32 border-r border-b border-desert-taupe/20"></div>
                 </div>
             </div>
 
-            <div class="w-full lg:w-1/2 space-y-8">
-                <h2 class="font-display text-4xl italic leading-tight">
-                    Passie voor <span class="gold-gradient-text">perfectie</span> en haarverlenging.
+            <div class="w-full lg:w-1/2 space-y-10">
+                <h2 class="text-rich-black flex flex-col items-start leading-none" 
+                    style="font-size: clamp(2rem, 4vw, 3rem);">
+                    <span class="font-sans font-light uppercase tracking-[0.15em] text-[0.45em] mb-4 opacity-70">Passie voor</span>
+                    <span class="font-display italic font-light">ambacht & perfectie</span>
                 </h2>
                 
-                <div class="space-y-6 text-[#6B6255] leading-loose font-light">
+                <div class="space-y-6 text-desert-taupe font-sans font-light leading-loose text-sm md:text-base">
                     <p>
-                        <strong>Extensions & More</strong> is opgericht door Jennifer en brengt meer dan 15 jaar ervaring in het kappersvak mee. Haar passie ligt bij haarverlenging en ze heeft zich volledig gespecialiseerd in de hoogwaardige hairweave-techniek.
+                        <strong class="font-medium text-rich-black">Extensions & More</strong> is het resultaat van jarenlange toewijding. Opgericht door Jennifer, brengt de salon meer dan 15 jaar ervaring in het kappersvak samen met een diepe specialisatie in de hairweave-techniek. Voor Jennifer is haarverlenging geen routineklus, maar een vorm van <strong class="text-rich-black">ambachtelijk werk</strong> waarbij precisie en kwaliteit de boventoon voeren.
                     </p>
                     
-                    <div class="bg-rich-black text-white p-8 border-l-4 border-gold my-10">
-                        <p class="italic">"In tegenstelling tot andere methodes waarbij ringen, lijm of chemicaliën worden gebruikt, blijft het haar met hairweave volledig onbeschadigd."</p>
+                    <div class="bg-rich-black text-soft-cream p-10 border-l-4 border-desert-taupe my-12 shadow-xl">
+                        <p class="italic font-display text-lg leading-relaxed">"Echt vakmanschap herken je aan het onzichtbare resultaat. Door uitsluitend te werken met verfijnd handwerk, blijft het eigen haar onbeschadigd en de look volledig natuurlijk."</p>
                     </div>
 
                     <p>
-                        Na intensieve trainingen bij <strong>Socap Original</strong> en de <strong>Beauty Academy</strong> besloot Jennifer haar droom te realiseren: een eigen salon met een onderscheidend concept.
+                        Na intensieve trainingen bij <strong class="text-rich-black">Socap Original</strong> en de <strong class="text-rich-black">Beauty Academy</strong> heeft Jennifer haar droom gerealiseerd: een salon waar het oude ambacht van haarweven wordt gecombineerd met de modernste technieken en de hoogste kwaliteit haar.
                     </p>
 
                     <p>
-                        Zo is Extensions & More ontstaan: een plek waar kwaliteit, professionaliteit en persoonlijke aandacht voorop staan. Een veilige en duurzame manier voor wie meer lengte of volume wil, zonder concessies te doen aan de gezondheid van het eigen haar.
+                        Extensions & More staat voor een onderscheidend concept. Een plek waar professionaliteit en persoonlijke aandacht samenkomen voor iedereen die droomt van meer lengte of volume, zonder concessies te doen aan de gezondheid van het eigen haar.
                     </p>
                 </div>
 
                 <div class="pt-8 flex items-center gap-6">
-                    <div class="w-12 h-px bg-gold"></div>
-                    <span class="font-display italic text-xl">Jennifer</span>
+                    <div class="w-12 h-px bg-desert-taupe/40"></div>
+                    <span class="font-display italic text-2xl text-rich-black">Jennifer</span>
                 </div>
             </div>
         </div>
@@ -114,8 +114,6 @@
                     const res = await fetch(url + '?t=' + Date.now());
                     if (res.ok) {
                         el.innerHTML = await res.text();
-                    } else {
-                        console.error('Failed to load:', url);
                     }
                 } catch (e) {
                     console.error('Fetch error:', e);
@@ -126,34 +124,25 @@
         loadIncludes().then(() => {
             const hamburger = document.getElementById('hamburger');
             const navMenu   = document.getElementById('nav-menu');
-            const bars      = hamburger.querySelectorAll('span');
+            const bars      = hamburger ? hamburger.querySelectorAll('span') : [];
             
-            // Pakt de huidige pagina naam
             const currentPath = window.location.pathname.split("/").pop() || "index.html";
 
-            // 1. ACTIVE PAGE INDICATOR FIX (Dezelfde als op index.html)
+            // Active indicator fix (Aangepast naar Desert Taupe)
             document.querySelectorAll('.nav-link').forEach(link => {
                 const linkPath = link.getAttribute('href');
                 if (linkPath === currentPath) {
-                    link.classList.remove('text-off-white', 'text-beige');
-                    link.classList.add('text-gold', 'font-bold', 'border-b', 'border-gold/40', 'pb-1');
+                    link.classList.remove('text-soft-cream/80');
+                    link.classList.add('text-desert-taupe', 'font-medium', 'border-b', 'border-desert-taupe/30', 'pb-1');
                 }
             });
 
-            // 2. HAMBURGER MENU LOGICA
             if (hamburger && navMenu) {
                 hamburger.addEventListener('click', () => {
                     const open = navMenu.classList.toggle('open');
-                    bars[0].style.transform = open ? 'rotate(45deg) translate(4.5px, 4.5px)' : '';
+                    bars[0].style.transform = open ? 'rotate(45deg) translate(5px, 5px)' : '';
                     bars[1].style.opacity   = open ? '0' : '';
-                    bars[2].style.transform = open ? 'rotate(-45deg) translate(4.5px, -4.5px)' : '';
-                });
-                
-                navMenu.querySelectorAll('a').forEach(link => {
-                    link.addEventListener('click', () => {
-                        navMenu.classList.remove('open');
-                        bars.forEach(b => { b.style.transform = ''; b.style.opacity = ''; });
-                    });
+                    bars[2].style.transform = open ? 'rotate(-45deg) translate(5px, -5px)' : '';
                 });
             }
         });

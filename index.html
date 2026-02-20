@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Extensions & More</title>
+    <title>Extensions & More | Ambachtelijk Vakmanschap</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -11,13 +11,13 @@
             theme: {
                 extend: {
                     colors: {
-                        gold: '#C8A96E',
-                        'gold-light': '#E2CFA0',
-                        'gold-dark': '#A07C3E',
-                        cream: '#F5EFE4',
-                        beige: '#EDE3D4',
-                        'off-white': '#FAFAF7',
-                        'rich-black': '#0A0906',
+                        // Pantone 17-1311 TCX Desert Taupe als basis
+                        'desert-taupe': '#907F71', 
+                        'taupe-light': '#D9CFC1',
+                        'taupe-dark': '#5E5249',
+                        'rich-black': '#1A1816',
+                        'soft-cream': '#F5F1ED',
+                        'off-white': '#FAFAF9',
                     },
                     fontFamily: {
                         display: ['"Cormorant Garamond"', 'serif'],
@@ -29,51 +29,58 @@
     </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
 <style>
-    /* DE HARDE FIX VOOR SWIPEN */
     html, body {
         max-width: 100%;
         overflow-x: hidden;
         position: relative;
         margin: 0;
         padding: 0;
+        background-color: #FAFAF9; /* off-white */
     }
 
-    .gold-gradient      { background: linear-gradient(135deg, #A07C3E 0%, #E2CFA0 45%, #C8A96E 70%, #A07C3E 100%); }
-    .gold-gradient-text { background: linear-gradient(135deg, #A07C3E 0%, #E2CFA0 45%, #C8A96E 70%, #A07C3E 100%);
-                          -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; display: inline-block; }
+    /* Subtiel verloop in plaats van hard goud */
+    .taupe-gradient { 
+        background: linear-gradient(135deg, #5E5249 0%, #907F71 50%, #D9CFC1 100%); 
+    }
+    
+    .text-modern-contrast {
+        color: #1A1816;
+        letter-spacing: 0.05em;
+    }
 
+    /* Minimalistische Scroll Indicator */
     @keyframes scrollPulse {
-        0%   { opacity: 0; transform: translateY(-8px); }
+        0%   { opacity: 0; transform: translateY(-5px); }
         50%  { opacity: 1; }
-        100% { opacity: 0; transform: translateY(8px); }
+        100% { opacity: 0; transform: translateY(5px); }
     }
-    .scroll-pulse { animation: scrollPulse 2.5s ease-in-out infinite; }
+    .scroll-pulse { animation: scrollPulse 3s ease-in-out infinite; }
 
-    /* Mobiel Menu Fix */
+    /* Navigatie effecten */
+    .nav-link { transition: all 0.4s ease; }
+    .nav-link:hover { color: #907F71; }
+
     @media (max-width: 767px) {
-        #nav-menu.open {
-            display: flex !important;
-        }
+        #nav-menu.open { display: flex !important; }
     }
 
-    /* Verbergt de lelijke scrollbar bij de reviews op mobiel */
     .scrollbar-hide::-webkit-scrollbar { display: none; }
     .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
 </style>
 </head>
 
-<body class="bg-off-white text-rich-black font-sans font-light overflow-x-hidden antialiased">
+<body class="text-rich-black font-sans font-light antialiased">
 
     <div data-include="layout/nav.html"></div>
 
     <div data-include="sections/hero.html"></div>
+    
     <div data-include="sections/intro.html"></div>
     <div data-include="sections/diensten.html"></div>
     <div data-include="sections/merken.html"></div>
@@ -95,32 +102,20 @@
                     const res = await fetch(url + '?t=' + Date.now());
                     if (res.ok) {
                         el.innerHTML = await res.text();
-                    } else {
-                        console.error('Failed to load:', url);
                     }
-                } catch (e) {
-                    console.error('Fetch error:', e);
-                }
+                } catch (e) { console.error('Fetch error:', e); }
             }));
         }
 
         loadIncludes().then(() => {
-            // 1. Initialiseer AOS (Animaties)
-            AOS.init({ once: true, offset: 80, duration: 800 });
+            AOS.init({ once: true, offset: 50, duration: 1000 });
 
-            // 2. Initialiseer Swiper (Review Carousel)
+            // Swiper configuratie met taupe focus
             new Swiper('.review-swiper', {
                 loop: true,
-                autoplay: {
-                    delay: 4000,
-                    disableOnInteraction: false,
-                },
-                pagination: {
-                    el: '.swiper-pagination',
-                    clickable: true,
-                },
-                grabCursor: true,
-                spaceBetween: 30,
+                autoplay: { delay: 5000 },
+                pagination: { el: '.swiper-pagination', clickable: true },
+                spaceBetween: 40,
                 slidesPerView: 1,
                 breakpoints: {
                     768: { slidesPerView: 2 },
@@ -128,33 +123,27 @@
                 }
             });
 
-            // 3. Navigatie & Hamburger Logica
             const hamburger = document.getElementById('hamburger');
             const navMenu   = document.getElementById('nav-menu');
             const bars      = hamburger ? hamburger.querySelectorAll('span') : [];
             const currentPath = window.location.pathname.split("/").pop() || "index.html";
 
+            // Active indicator aangepast naar Taupe
             document.querySelectorAll('.nav-link').forEach(link => {
                 const linkPath = link.getAttribute('href');
                 if (linkPath === currentPath) {
                     link.classList.remove('text-off-white', 'text-beige');
-                    link.classList.add('text-gold', 'font-bold', 'border-b', 'border-gold/40', 'pb-1');
+                    link.classList.add('text-desert-taupe', 'font-medium', 'border-b', 'border-desert-taupe/30', 'pb-1');
                 }
             });
 
             if (hamburger && navMenu) {
                 hamburger.addEventListener('click', () => {
                     const open = navMenu.classList.toggle('open');
-                    bars[0].style.transform = open ? 'rotate(45deg) translate(4.5px, 4.5px)' : '';
+                    bars[0].style.transform = open ? 'rotate(45deg) translate(5px, 5px)' : '';
                     bars[1].style.opacity   = open ? '0' : '';
-                    bars[2].style.transform = open ? 'rotate(-45deg) translate(4.5px, -4.5px)' : '';
-                });
-                
-                navMenu.querySelectorAll('a').forEach(link => {
-                    link.addEventListener('click', () => {
-                        navMenu.classList.remove('open');
-                        bars.forEach(b => { b.style.transform = ''; b.style.opacity = ''; });
-                    });
+                    bars[2].style.transform = open ? 'rotate(-45deg) translate(5px, -5px)' : '';
+                    bars.forEach(bar => bar.style.backgroundColor = open ? '#907F71' : '#1A1816');
                 });
             }
         });

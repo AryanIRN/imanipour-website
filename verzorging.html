@@ -11,13 +11,12 @@
             theme: {
                 extend: {
                     colors: {
-                        gold: '#C8A96E',
-                        'gold-light': '#E2CFA0',
-                        'gold-dark': '#A07C3E',
-                        cream: '#F5EFE4',
-                        beige: '#EDE3D4',
-                        'off-white': '#FAFAF7',
-                        'rich-black': '#0A0906',
+                        'desert-taupe': '#907F71', 
+                        'taupe-light': '#D9CFC1',
+                        'taupe-dark': '#5E5249',
+                        'rich-black': '#1A1816',
+                        'soft-cream': '#F5F1ED',
+                        'off-white': '#FAFAF9',
                     },
                     fontFamily: {
                         display: ['"Cormorant Garamond"', 'serif'],
@@ -32,24 +31,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
-        .gold-gradient-text { 
-            background: linear-gradient(135deg, #A07C3E 0%, #E2CFA0 45%, #C8A96E 70%, #A07C3E 100%); 
-            -webkit-background-clip: text; 
-            -webkit-text-fill-color: transparent; 
-            display: inline-block; 
-        }
-        
         .step-number { 
             font-family: 'Cormorant Garamond', serif; 
             font-style: italic; 
-            font-size: 5rem; 
+            font-size: 6rem; 
             line-height: 1; 
-            opacity: 0.1; 
+            opacity: 0.12; 
             position: absolute; 
-            top: -1rem; 
-            left: -1rem; 
+            top: -1.5rem; 
+            left: -1.5rem; 
             z-index: 0; 
-            color: #C8A96E; 
+            color: #907F71; 
         }
         
         /* Mobiel Menu Fix */
@@ -63,43 +55,49 @@
     <div data-include="layout/nav.html"></div>
 
     <header class="pt-48 pb-24 bg-rich-black text-center relative overflow-hidden text-white">
+        <div class="absolute top-0 left-0 right-0 h-px bg-desert-taupe/20"></div>
         <div class="w-[88%] max-w-3xl mx-auto relative z-10">
-            <span class="text-gold uppercase tracking-[0.35em] font-medium text-[0.68rem] block mb-5">Exclusieve Salonproducten</span>
-            <h1 class="font-display font-light italic mb-4 text-6xl">
-                Verzorgings<span class="gold-gradient-text">tips</span>
+            <span class="text-desert-taupe uppercase tracking-[0.45em] font-medium text-[0.6rem] block mb-6">Exclusieve Salonproducten</span>
+            <h1 class="text-soft-cream flex flex-col items-center leading-none mb-8" 
+                style="font-size: clamp(2.5rem, 6vw, 4.5rem);">
+                <span class="font-sans font-light uppercase tracking-[0.15em] text-[0.45em] mb-4 opacity-50">Verzorgings</span>
+                <span class="font-display italic font-light">tips</span>
             </h1>
-            <div class="w-14 h-px bg-gold/50 mx-auto mt-5 mb-8"></div>
-            <p class="text-white/60 font-light leading-loose text-sm max-w-xl mx-auto">
+            <div class="w-12 h-px bg-desert-taupe/30 mx-auto mt-5 mb-8"></div>
+            <p class="text-taupe-light/60 font-sans font-light leading-loose text-xs md:text-sm max-w-xl mx-auto">
                 Extensions hebben geen natuurlijke voeding vanuit de hoofdhuid. Onze professionele productlijn is speciaal ontwikkeld voor optimaal behoud en is <strong>exclusief verkrijgbaar in onze salon</strong> tijdens of na uw behandeling.
             </p>
         </div>
+        <div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.02]">
+            <span class="font-display italic text-[30rem] text-desert-taupe">V</span>
+        </div>
     </header>
 
-    <main class="w-[88%] max-w-6xl mx-auto py-24 space-y-32">
+    <main class="w-[88%] max-w-6xl mx-auto py-24 space-y-40">
 
         <section class="flex flex-col md:flex-row gap-16 items-center">
             <div class="w-full md:w-1/2 relative">
                 <span class="step-number">01</span>
                 <div class="relative z-10">
-                    <h2 class="font-display italic text-4xl mb-6">Start met een zuivere basis</h2>
-                    <p class="leading-loose mb-8 text-gray-600">
+                    <h2 class="font-display italic text-4xl mb-6 text-rich-black">Start met een zuivere basis</h2>
+                    <p class="leading-loose mb-10 text-desert-taupe font-sans font-light text-sm md:text-base">
                         Borstel je haar altijd voor het wassen. Was je haar twee keer met de <strong>Argan Shampoo</strong>. De eerste keer verwijdert vuil en resten, de tweede keer voedt de haarschubben. Voor koele tinten adviseren wij de <strong>Blue Shampoo</strong>.
                     </p>
                     <div class="flex gap-4">
-                        <div class="text-center bg-white p-4 border border-gold/10 shadow-sm w-1/2">
-                            <p class="text-[10px] uppercase tracking-widest text-gold mb-2">Essential</p>
-                            <h4 class="text-xs font-bold italic">Argan Shampoo</h4>
-                            <p class="text-[9px] text-gray-400 mt-1">250 ML</p>
+                        <div class="text-center bg-white p-6 border border-desert-taupe/10 shadow-sm w-1/2">
+                            <p class="text-[9px] uppercase tracking-[0.3em] text-desert-taupe mb-3 font-bold">Essential</p>
+                            <h4 class="text-xs font-bold font-display italic text-rich-black">Argan Shampoo</h4>
+                            <p class="text-[9px] text-desert-taupe/50 mt-2 tracking-widest uppercase">250 ML</p>
                         </div>
-                        <div class="text-center bg-white p-4 border border-gold/10 shadow-sm w-1/2">
-                            <p class="text-[10px] uppercase tracking-widest text-gold mb-2">Color Care</p>
-                            <h4 class="text-xs font-bold italic">Blue Shampoo</h4>
-                            <p class="text-[9px] text-gray-400 mt-1">250 ML</p>
+                        <div class="text-center bg-white p-6 border border-desert-taupe/10 shadow-sm w-1/2">
+                            <p class="text-[9px] uppercase tracking-[0.3em] text-desert-taupe mb-3 font-bold">Color Care</p>
+                            <h4 class="text-xs font-bold font-display italic text-rich-black">Blue Shampoo</h4>
+                            <p class="text-[9px] text-desert-taupe/50 mt-2 tracking-widest uppercase">250 ML</p>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="w-full md:w-1/2 bg-cream p-12 aspect-square flex items-center justify-center">
+            <div class="w-full md:w-1/2 bg-soft-cream p-12 aspect-square flex items-center justify-center border border-desert-taupe/5">
                 <img src="fotos/products/product_group_1.png" alt="Argan & Blue Shampoo Duo" class="max-h-full object-contain drop-shadow-2xl">
             </div>
         </section>
@@ -108,16 +106,16 @@
             <div class="w-full md:w-1/2 relative">
                 <span class="step-number">02</span>
                 <div class="relative z-10">
-                    <h2 class="font-display italic text-4xl mb-6">Hydratatie & Glans</h2>
-                    <p class="leading-loose mb-8 text-gray-600">
+                    <h2 class="font-display italic text-4xl mb-6 text-rich-black">Hydratatie & Glans</h2>
+                    <p class="leading-loose mb-10 text-desert-taupe font-sans font-light text-sm md:text-base">
                         Knijp water voorzichtig uit je haar. Onze <strong>Argan Conditioner</strong> sluit de haarschubben en zorgt voor zijdezachte extensions. Onmisbaar voor het behoud van de natuurlijke glans van uw Remy Human Hair.
                     </p>
-                    <div class="bg-rich-black text-white p-6 border-l-4 border-gold">
-                        <p class="italic text-sm">"Onze conditioner is rijk aan voeding die de extension zelf niet kan aanmaken."</p>
+                    <div class="bg-rich-black text-soft-cream p-8 border-l-4 border-desert-taupe shadow-xl">
+                        <p class="italic text-sm font-light leading-relaxed">"Onze conditioner is rijk aan voeding die de extension zelf niet kan aanmaken."</p>
                     </div>
                 </div>
             </div>
-            <div class="w-full md:w-1/2 bg-cream p-12 aspect-square flex items-center justify-center">
+            <div class="w-full md:w-1/2 bg-soft-cream p-12 aspect-square flex items-center justify-center border border-desert-taupe/5">
                 <img src="fotos/products/product_conditioner.png" alt="Argan Conditioner" class="max-h-full object-contain drop-shadow-2xl">
             </div>
         </section>
@@ -126,16 +124,16 @@
             <div class="w-full md:w-1/2 relative">
                 <span class="step-number">03</span>
                 <div class="relative z-10">
-                    <h2 class="font-display italic text-4xl mb-6">Hittebescherming</h2>
-                    <p class="leading-loose mb-8 text-gray-600">
+                    <h2 class="font-display italic text-4xl mb-6 text-rich-black">Hittebescherming</h2>
+                    <p class="leading-loose mb-10 text-desert-taupe font-sans font-light text-sm md:text-base">
                         Bij styling met warmte is de <strong>Shake & Protect Spray</strong> essentieel. Het vormt een onzichtbaar hitteschild en UV-filter, waardoor uw haar niet uitdroogt door stylingtools of zonlicht.
                     </p>
-                    <p class="text-gold text-[10px] uppercase tracking-widest font-bold border-b border-gold/30 pb-2 inline-block">
+                    <p class="text-rich-black text-[10px] uppercase tracking-[0.3em] font-bold border-b border-desert-taupe/30 pb-3 inline-block">
                         Verkrijgbaar tijdens uw afspraak
                     </p>
                 </div>
             </div>
-            <div class="w-full md:w-1/2 bg-cream p-12 aspect-square flex items-center justify-center">
+            <div class="w-full md:w-1/2 bg-soft-cream p-12 aspect-square flex items-center justify-center border border-desert-taupe/5">
                 <img src="fotos/products/product_shake.png" alt="Shake & Protect Spray" class="max-h-full object-contain drop-shadow-2xl">
             </div>
         </section>
@@ -144,29 +142,29 @@
             <div class="w-full md:w-1/2 relative">
                 <span class="step-number">04</span>
                 <div class="relative z-10">
-                    <h2 class="font-display italic text-4xl mb-6">Perfecte Finish</h2>
-                    <p class="leading-loose mb-8 text-gray-600">
+                    <h2 class="font-display italic text-4xl mb-6 text-rich-black">Perfecte Finish</h2>
+                    <p class="leading-loose mb-10 text-desert-taupe font-sans font-light text-sm md:text-base">
                         De <strong>Leave-in Conditioner</strong> sprayt u dagelijks op (handdoek)droog haar. Dit zorgt voor constante hydratatie en maakt het haar direct makkelijk doorkambaar, wat schade aan de aanhechting voorkomt.
                     </p>
                 </div>
             </div>
-            <div class="w-full md:w-1/2 bg-cream p-12 aspect-square flex items-center justify-center">
+            <div class="w-full md:w-1/2 bg-soft-cream p-12 aspect-square flex items-center justify-center border border-desert-taupe/5">
                 <img src="fotos/products/product_leave_in.png" alt="Leave-in Conditioner" class="max-h-full object-contain drop-shadow-2xl">
             </div>
         </section>
 
     </main>
 
-    <section class="bg-rich-black py-20 border-y border-gold/20 relative overflow-hidden">
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gold/5 blur-[120px] pointer-events-none"></div>
+    <section class="bg-rich-black py-24 border-y border-desert-taupe/10 relative overflow-hidden text-center">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-desert-taupe/5 blur-[120px] pointer-events-none"></div>
         
-        <div class="w-[88%] max-w-2xl mx-auto text-center relative z-10">
-            <h3 class="font-display italic text-2xl mb-6 gold-gradient-text">Professioneel Advies</h3>
-            <p class="text-sm text-white/70 leading-loose font-light">
+        <div class="w-[88%] max-w-2xl mx-auto relative z-10">
+            <h3 class="font-display italic text-3xl mb-8 text-soft-cream">Professioneel Advies</h3>
+            <p class="text-sm text-taupe-light/70 leading-loose font-light px-4">
                 Omdat elk haartype anders is, adviseren wij u graag persoonlijk over de juiste combinaties. 
                 U kunt onze volledige productlijn direct aanschaffen na uw behandeling in de salon. 
             </p>
-            <div class="w-10 h-px bg-gold/30 mx-auto mt-8"></div>
+            <div class="w-12 h-px bg-desert-taupe/30 mx-auto mt-10"></div>
         </div>
     </section>
 
@@ -189,33 +187,23 @@
             const hamburger = document.getElementById('hamburger');
             const navMenu   = document.getElementById('nav-menu');
             const bars      = hamburger ? hamburger.querySelectorAll('span') : [];
-            
-            // Pakt de huidige pagina naam
             const currentPath = window.location.pathname.split("/").pop() || "index.html";
 
-            // 1. ACTIVE PAGE INDICATOR FIX
+            // Active indicator (Taupe)
             document.querySelectorAll('.nav-link').forEach(link => {
                 const linkPath = link.getAttribute('href');
                 if (linkPath === currentPath) {
-                    link.classList.remove('text-off-white', 'text-beige');
-                    link.classList.add('text-gold', 'font-bold', 'border-b', 'border-gold/40', 'pb-1');
+                    link.classList.remove('text-soft-cream/80');
+                    link.classList.add('text-desert-taupe', 'font-medium', 'border-b', 'border-desert-taupe/30', 'pb-1');
                 }
             });
 
-            // 2. HAMBURGER MENU LOGICA
             if (hamburger && navMenu) {
                 hamburger.addEventListener('click', () => {
                     const open = navMenu.classList.toggle('open');
-                    bars[0].style.transform = open ? 'rotate(45deg) translate(4.5px, 4.5px)' : '';
+                    bars[0].style.transform = open ? 'rotate(45deg) translate(5px, 5px)' : '';
                     bars[1].style.opacity   = open ? '0' : '';
-                    bars[2].style.transform = open ? 'rotate(-45deg) translate(4.5px, -4.5px)' : '';
-                });
-                
-                navMenu.querySelectorAll('a').forEach(link => {
-                    link.addEventListener('click', () => {
-                        navMenu.classList.remove('open');
-                        bars.forEach(b => { b.style.transform = ''; b.style.opacity = ''; });
-                    });
+                    bars[2].style.transform = open ? 'rotate(-45deg) translate(5px, -5px)' : '';
                 });
             }
         });

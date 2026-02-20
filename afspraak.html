@@ -11,13 +11,12 @@
             theme: {
                 extend: {
                     colors: {
-                        gold: '#C8A96E',
-                        'gold-light': '#E2CFA0',
-                        'gold-dark': '#A07C3E',
-                        cream: '#F5EFE4',
-                        beige: '#EDE3D4',
-                        'off-white': '#FAFAF7',
-                        'rich-black': '#0A0906',
+                        'desert-taupe': '#907F71', 
+                        'taupe-light': '#D9CFC1',
+                        'taupe-dark': '#5E5249',
+                        'rich-black': '#1A1816',
+                        'soft-cream': '#F5F1ED',
+                        'off-white': '#FAFAF9',
                     },
                     fontFamily: {
                         display: ['"Cormorant Garamond"', 'serif'],
@@ -32,13 +31,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
-        .gold-gradient-text { 
-            background: linear-gradient(135deg, #A07C3E 0%, #E2CFA0 45%, #C8A96E 70%, #A07C3E 100%); 
-            -webkit-background-clip: text; 
-            -webkit-text-fill-color: transparent; 
-            display: inline-block; 
-        }
-
         /* Mobiel Menu Fix */
         @media (max-width: 767px) {
             #nav-menu.open { display: flex !important; }
@@ -49,77 +41,89 @@
 
     <div data-include="layout/nav.html"></div>
 
-    <header class="pt-48 pb-20 bg-rich-black text-center relative overflow-hidden text-white">
+    <header class="pt-48 pb-24 bg-rich-black text-center relative overflow-hidden">
+        <div class="absolute top-0 left-0 right-0 h-px bg-desert-taupe/20"></div>
         <div class="w-[88%] max-w-3xl mx-auto relative z-10">
-            <span class="text-gold uppercase tracking-[0.35em] font-medium text-[0.68rem] block mb-5">Start jouw transformatie</span>
-            <h1 class="font-display font-light italic mb-4 text-6xl">
-                Maak een <span class="gold-gradient-text">Afspraak</span>
+            <span class="text-desert-taupe uppercase tracking-[0.45em] font-medium text-[0.6rem] block mb-6">Start jouw transformatie</span>
+            <h1 class="text-soft-cream flex flex-col items-center leading-none mb-8" 
+                style="font-size: clamp(2.5rem, 6vw, 4.5rem);">
+                <span class="font-sans font-light uppercase tracking-[0.15em] text-[0.45em] mb-4 opacity-50">Maak een</span>
+                <span class="font-display italic font-light">Afspraak</span>
             </h1>
-            <div class="w-14 h-px bg-gold/50 mx-auto mt-5"></div>
+            <div class="w-12 h-px bg-desert-taupe/30 mx-auto mt-5"></div>
+        </div>
+        <div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.02]">
+            <span class="font-display italic text-[30rem] text-desert-taupe">A</span>
         </div>
     </header>
 
     <main class="w-[88%] max-w-6xl mx-auto py-24">
         <div class="grid lg:grid-cols-2 gap-20">
             
-            <div class="space-y-12">
-                <div>
-                    <h2 class="font-display text-3xl italic mb-6">Hoe wil je contact opnemen?</h2>
-                    <p class="text-gray-600 leading-loose mb-8">
+            <div class="space-y-16">
+                <div class="text-center lg:text-left">
+                    <h2 class="text-rich-black flex flex-col items-center lg:items-start leading-none mb-8" 
+                        style="font-size: clamp(1.8rem, 4vw, 2.6rem);">
+                        <span class="font-sans font-light uppercase tracking-[0.2em] text-[0.4em] mb-3 opacity-70">Hoe wil je</span>
+                        <span class="font-display italic font-light">contact opnemen?</span>
+                    </h2>
+                    <p class="text-desert-taupe font-sans font-light text-sm md:text-base leading-loose max-w-xl mx-auto lg:mx-0">
                         Voor het inplannen van een behandeling of een vrijblijvend adviesgesprek kun je contact opnemen via onderstaande kanalen. Ik reageer doorgaans binnen enkele uren.
                     </p>
                 </div>
 
                 <div class="grid gap-6">
-                    <a href="https://wa.me/31651579511" class="flex items-center gap-6 p-6 bg-white border border-gold/10 hover:border-gold/40 transition-all group shadow-sm">
-                        <div class="w-12 h-12 rounded-full bg-cream flex items-center justify-center text-gold group-hover:bg-gold group-hover:text-white transition-all">
-                            <i class="fab fa-whatsapp text-xl"></i>
+                    <a href="https://wa.me/31651579511" class="flex items-center gap-6 p-8 bg-white border border-desert-taupe/10 hover:border-desert-taupe/40 transition-all group shadow-sm hover:shadow-xl duration-700">
+                        <div class="w-14 h-14 rounded-full bg-soft-cream flex items-center justify-center text-desert-taupe group-hover:bg-desert-taupe group-hover:text-soft-cream transition-all duration-500">
+                            <i class="fab fa-whatsapp text-2xl"></i>
                         </div>
                         <div>
-                            <span class="block text-[10px] uppercase tracking-widest text-gold mb-1">Snel & Direct</span>
-                            <span class="font-medium">WhatsApp</span>
+                            <span class="block text-[0.55rem] uppercase tracking-[0.3em] text-desert-taupe/60 font-bold mb-1">Snel & Direct</span>
+                            <span class="font-sans font-medium text-rich-black tracking-wide">WhatsApp</span>
                         </div>
                     </a>
 
-                    <a href="tel:0651579511" class="flex items-center gap-6 p-6 bg-white border border-gold/10 hover:border-gold/40 transition-all group shadow-sm">
-                        <div class="w-12 h-12 rounded-full bg-cream flex items-center justify-center text-gold group-hover:bg-gold group-hover:text-white transition-all">
-                            <i class="fas fa-phone-alt text-lg"></i>
+                    <a href="tel:0651579511" class="flex items-center gap-6 p-8 bg-white border border-desert-taupe/10 hover:border-desert-taupe/40 transition-all group shadow-sm hover:shadow-xl duration-700">
+                        <div class="w-14 h-14 rounded-full bg-soft-cream flex items-center justify-center text-desert-taupe group-hover:bg-desert-taupe group-hover:text-soft-cream transition-all duration-500">
+                            <i class="fas fa-phone-alt text-xl"></i>
                         </div>
                         <div>
-                            <span class="block text-[10px] uppercase tracking-widest text-gold mb-1">Bellen</span>
-                            <span class="font-medium">06 51579511</span>
+                            <span class="block text-[0.55rem] uppercase tracking-[0.3em] text-desert-taupe/60 font-bold mb-1">Bellen</span>
+                            <span class="font-sans font-medium text-rich-black tracking-wide">06 51579511</span>
                         </div>
                     </a>
 
-                    <a href="mailto:info@extensionsandmore.nl" class="flex items-center gap-6 p-6 bg-white border border-gold/10 hover:border-gold/40 transition-all group shadow-sm">
-                        <div class="w-12 h-12 rounded-full bg-cream flex items-center justify-center text-gold group-hover:bg-gold group-hover:text-white transition-all">
-                            <i class="far fa-envelope text-lg"></i>
+                    <a href="mailto:info@extensionsandmore.nl" class="flex items-center gap-6 p-8 bg-white border border-desert-taupe/10 hover:border-desert-taupe/40 transition-all group shadow-sm hover:shadow-xl duration-700">
+                        <div class="w-14 h-14 rounded-full bg-soft-cream flex items-center justify-center text-desert-taupe group-hover:bg-desert-taupe group-hover:text-soft-cream transition-all duration-500">
+                            <i class="far fa-envelope text-xl"></i>
                         </div>
                         <div>
-                            <span class="block text-[10px] uppercase tracking-widest text-gold mb-1">E-mail</span>
-                            <span class="font-medium">info@extensionsandmore.nl</span>
+                            <span class="block text-[0.55rem] uppercase tracking-[0.3em] text-desert-taupe/60 font-bold mb-1">E-mail</span>
+                            <span class="font-sans font-medium text-rich-black tracking-wide">info@extensionsandmore.nl</span>
                         </div>
                     </a>
                 </div>
             </div>
 
-            <div class="bg-cream p-10 md:p-16 flex flex-col justify-center shadow-sm">
-                <h3 class="font-display italic text-3xl mb-8">Locatie & Openingstijden</h3>
+            <div class="bg-soft-cream p-12 md:p-20 flex flex-col justify-center border border-desert-taupe/5 relative overflow-hidden">
+                <div class="absolute -top-24 -right-24 w-64 h-64 bg-desert-taupe/5 blur-[80px] rounded-full"></div>
                 
-                <div class="space-y-8 text-sm leading-loose text-gray-700">
-                    <div>
-                        <span class="block font-bold text-rich-black uppercase tracking-widest text-[10px] mb-2">Adres</span>
-                        <p>De Houtwerf 13<br>7054 CR Westendorp</p>
+                <h3 class="font-display italic text-3xl mb-10 text-rich-black relative z-10 text-center lg:text-left">Locatie & Beschikbaarheid</h3>
+                
+                <div class="space-y-10 text-sm leading-loose text-desert-taupe font-sans font-light relative z-10">
+                    <div class="text-center lg:text-left">
+                        <span class="block font-sans font-bold text-rich-black uppercase tracking-[0.25em] text-[0.6rem] mb-3">Adres</span>
+                        <p class="leading-relaxed">De Houtwerf 13<br>7054 CR Westendorp</p>
                     </div>
 
-                    <div>
-                        <span class="block font-bold text-rich-black uppercase tracking-widest text-[10px] mb-2">Beschikbaarheid</span>
-                        <p>Behandelingen vinden uitsluitend plaats op afspraak. Neem contact op voor de actuele beschikbaarheid overdag of in de avonduren.</p>
+                    <div class="text-center lg:text-left">
+                        <span class="block font-sans font-bold text-rich-black uppercase tracking-[0.25em] text-[0.6rem] mb-3">Beschikbaarheid</span>
+                        <p class="leading-relaxed px-4 lg:px-0">Behandelingen vinden uitsluitend plaats op afspraak. Neem contact op voor de actuele beschikbaarheid overdag of in de avonduren.</p>
                     </div>
 
-                    <div class="pt-8 border-t border-gold/20">
-                        <p class="italic text-xs">"Kwaliteit en persoonlijke aandacht staan voorop. Ik neem graag de tijd voor jouw haarwensen."</p>
-                        <span class="block mt-4 font-display italic text-lg text-gold">— Jennifer</span>
+                    <div class="pt-10 border-t border-desert-taupe/10 text-center lg:text-left">
+                        <p class="italic text-xs leading-loose">"Kwaliteit en persoonlijke aandacht staan voorop. Ik neem graag de tijd voor jouw haarwensen."</p>
+                        <span class="block mt-6 font-display italic text-xl text-rich-black">Jennifer</span>
                     </div>
                 </div>
             </div>
@@ -145,33 +149,23 @@
             const hamburger = document.getElementById('hamburger');
             const navMenu   = document.getElementById('nav-menu');
             const bars      = hamburger ? hamburger.querySelectorAll('span') : [];
-            
-            // Pakt de huidige pagina naam
             const currentPath = window.location.pathname.split("/").pop() || "index.html";
 
-            // 1. ACTIVE PAGE INDICATOR
+            // Active indicator (Taupe)
             document.querySelectorAll('.nav-link').forEach(link => {
                 const linkPath = link.getAttribute('href');
                 if (linkPath === currentPath) {
-                    link.classList.remove('text-off-white', 'text-beige');
-                    link.classList.add('text-gold', 'font-bold', 'border-b', 'border-gold/40', 'pb-1');
+                    link.classList.remove('text-soft-cream/80');
+                    link.classList.add('text-desert-taupe', 'font-medium', 'border-b', 'border-desert-taupe/30', 'pb-1');
                 }
             });
 
-            // 2. HAMBURGER MENU LOGICA
             if (hamburger && navMenu) {
                 hamburger.addEventListener('click', () => {
                     const open = navMenu.classList.toggle('open');
-                    bars[0].style.transform = open ? 'rotate(45deg) translate(4.5px, 4.5px)' : '';
+                    bars[0].style.transform = open ? 'rotate(45deg) translate(5px, 5px)' : '';
                     bars[1].style.opacity   = open ? '0' : '';
-                    bars[2].style.transform = open ? 'rotate(-45deg) translate(4.5px, -4.5px)' : '';
-                });
-
-                navMenu.querySelectorAll('a').forEach(link => {
-                    link.addEventListener('click', () => {
-                        navMenu.classList.remove('open');
-                        bars.forEach(b => { b.style.transform = ''; b.style.opacity = ''; });
-                    });
+                    bars[2].style.transform = open ? 'rotate(-45deg) translate(5px, -5px)' : '';
                 });
             }
         });
