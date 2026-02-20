@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prijzen | Extensions & More</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { gold: '#C8A96E', 'gold-light': '#E2CFA0', 'gold-dark': '#A07C3E', cream: '#F5EFE4', 'off-white': '#FAFAF7', 'rich-black': '#0A0906' },
+                    fontFamily: { display: ['"Cormorant Garamond"', 'serif'], sans: ['Montserrat', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        .gold-gradient { background: linear-gradient(135deg, #A07C3E 0%, #E2CFA0 45%, #C8A96E 70%, #A07C3E 100%); }
+        .gold-gradient-text { background: linear-gradient(135deg, #A07C3E 0%, #E2CFA0 45%, #C8A96E 70%, #A07C3E 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block; }
+        #nav-menu.open { display: flex; }
+    </style>
+</head>
+<body class="bg-off-white text-rich-black font-sans font-light antialiased overflow-x-hidden">
+
+    <div data-include="layout/nav.html"></div>
+
+    <header class="pt-48 pb-24 bg-cream text-center relative overflow-hidden">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-20 h-0.5 gold-gradient"></div>
+        <div class="w-[88%] max-w-3xl mx-auto">
+            <span class="text-gold uppercase tracking-[0.35em] font-medium text-[0.68rem] block mb-5">Tarieven</span>
+            <h1 class="font-display font-light italic text-rich-black mb-4" style="font-size: clamp(2.5rem, 6vw, 4rem);">
+                Onze <span class="gold-gradient-text">Prijzen</span>
+            </h1>
+            <div class="w-14 h-px bg-gold/50 mx-auto mt-5 mb-8"></div>
+            <p class="text-[#6B6255] font-light leading-loose text-sm italic text-center">
+                Inclusief inzetten, snijden en stylen. Prijzen kunnen variëren op basis van lengte en dikte.
+            </p>
+        </div>
+    </header>
+
+    <main class="w-[88%] max-w-5xl mx-auto py-20 space-y-24">
+        
+        <section class="max-w-2xl mx-auto text-center border-b border-gold/10 pb-12">
+            <h3 class="font-display italic text-2xl mb-4 text-gold-dark">Intake consult</h3>
+            <div class="flex justify-between items-center py-4 px-6 bg-white shadow-sm border-l-2 border-gold">
+                <span class="text-sm uppercase tracking-widest font-medium">Intake Hair Extensions</span>
+                <span class="font-display italic text-2xl text-gold-dark">Gratis</span>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="font-display italic text-3xl mb-10 text-center">Blend Your Hair</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-8 border border-gold/5 shadow-sm">
+                    <h4 class="font-display italic text-xl mb-2 text-gold-dark">Volume</h4>
+                    <p class="text-[10px] uppercase tracking-widest text-gray-400 mb-6">35 CM | 45 CM | 55 CM</p>
+                    <span class="font-display italic text-3xl">Vanaf €295,-</span>
+                    <p class="mt-6 text-[11px] text-gray-500 italic">Inclusief inzetten en knippen.</p>
+                </div>
+                <div class="bg-white p-8 border border-gold/5 shadow-sm">
+                    <h4 class="font-display italic text-xl mb-2 text-gold-dark">Volume & Verlengen</h4>
+                    <p class="text-[10px] uppercase tracking-widest text-gray-400 mb-6">35 CM | 45 CM | 55 CM</p>
+                    <span class="font-display italic text-3xl">Vanaf €330,-</span>
+                    <p class="mt-6 text-[11px] text-gray-500 italic">Inclusief inzetten en knippen.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="font-display italic text-3xl mb-10 text-center">Humano Hair</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-8 border border-gold/5 shadow-sm space-y-6">
+                    <h4 class="font-display italic text-xl text-gold-dark">Uni kleuren</h4>
+                    <p class="text-[10px] uppercase tracking-widest text-gray-400">40 CM | 55 CM | 65 CM</p>
+                    <div class="space-y-4 text-sm uppercase tracking-tighter">
+                        <div class="flex justify-between border-b border-gold/5 pb-2"><span>40 CM</span><span>Vanaf €285,-</span></div>
+                        <div class="flex justify-between border-b border-gold/5 pb-2"><span>55 CM</span><span>Vanaf €345,-</span></div>
+                        <div class="flex justify-between border-b border-gold/5 pb-2"><span>65 CM</span><span>Vanaf €375,-</span></div>
+                    </div>
+                </div>
+                <div class="bg-white p-8 border border-gold/5 shadow-sm space-y-6">
+                    <h4 class="font-display italic text-xl text-gold-dark">Balayage kleuren</h4>
+                    <p class="text-[10px] uppercase tracking-widest text-gray-400">40 CM | 55 CM | 65 CM</p>
+                    <div class="space-y-4 text-sm uppercase tracking-tighter">
+                        <div class="flex justify-between border-b border-gold/5 pb-2"><span>40 CM</span><span>Vanaf €325,-</span></div>
+                        <div class="flex justify-between border-b border-gold/5 pb-2"><span>55 CM</span><span>Vanaf €385,-</span></div>
+                        <div class="flex justify-between border-b border-gold/5 pb-2"><span>65 CM</span><span>Vanaf €400,-</span></div>
+                    </div>
+                </div>
+            </div>
+            <p class="mt-10 text-center text-xs text-gray-400 italic">De prijs kan variëren afhankelijk van de lengte en dikte van je haar.</p>
+        </section>
+    </main>
+
+    <div data-include="sections/afspraak.html"></div>
+    <div data-include="sections/footer.html"></div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        async function loadIncludes() {
+            const slots = document.querySelectorAll('[data-include]');
+            await Promise.all([...slots].map(async (el) => {
+                const url = el.dataset.include;
+                try {
+                    const res = await fetch(url + '?t=' + Date.now());
+                    if (res.ok) {
+                        el.innerHTML = await res.text();
+                    }
+                } catch (e) { console.error('Error:', e); }
+            }));
+        }
+
+        loadIncludes().then(() => {
+            AOS.init({ once: true, duration: 800 });
+
+            const hamburger = document.getElementById('hamburger');
+            const navMenu = document.getElementById('nav-menu');
+            const currentPath = window.location.pathname.split("/").pop() || "index.html";
+
+            // Active indicator
+            document.querySelectorAll('.nav-link').forEach(link => {
+                if (link.getAttribute('href') === currentPath) {
+                    link.classList.remove('text-off-white');
+                    link.classList.add('text-gold-light', 'font-bold', 'border-b-2', 'border-gold', 'pb-1');
+                }
+            });
+
+            if(hamburger && navMenu) {
+                const bars = hamburger.querySelectorAll('span');
+                hamburger.addEventListener('click', () => {
+                    const open = navMenu.classList.toggle('open');
+                    bars[0].style.transform = open ? 'rotate(45deg) translate(4.5px, 4.5px)' : '';
+                    bars[1].style.opacity = open ? '0' : '';
+                    bars[2].style.transform = open ? 'rotate(-45deg) translate(4.5px, -4.5px)' : '';
+                });
+            }
+        });
+    </script>
+</body>
+</html>
