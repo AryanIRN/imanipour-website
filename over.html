@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Over Jennifer | Extensions & More</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { gold: '#C8A96E', 'gold-light': '#E2CFA0', 'rich-black': '#0A0906', cream: '#F5EFE4', 'off-white': '#FAFAF7' },
+                    fontFamily: { display: ['"Cormorant Garamond"', 'serif'], sans: ['Montserrat', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        .gold-gradient-text { background: linear-gradient(135deg, #A07C3E 0%, #E2CFA0 45%, #C8A96E 70%, #A07C3E 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block; }
+    </style>
+</head>
+<body class="bg-off-white text-rich-black font-sans font-light antialiased">
+
+    <div data-include="layout/nav.html"></div>
+
+    <header class="pt-48 pb-24 bg-cream text-center relative overflow-hidden">
+        <div class="w-[88%] max-w-3xl mx-auto">
+            <span class="text-gold uppercase tracking-[0.35em] font-medium text-[0.68rem] block mb-5">Het gezicht achter de salon</span>
+            <h1 class="font-display font-light italic text-rich-black mb-4 text-6xl">
+                Over <span class="gold-gradient-text">Jennifer</span>
+            </h1>
+            <div class="w-14 h-px bg-gold/50 mx-auto mt-5 mb-8"></div>
+        </div>
+    </header>
+
+    <main class="w-[88%] max-w-6xl mx-auto py-24">
+        <div class="flex flex-col lg:flex-row gap-20 items-center">
+            
+            <div class="w-full lg:w-1/2">
+                <div class="relative">
+                    <div class="aspect-[4/5] bg-cream overflow-hidden border border-gold/10 shadow-2xl">
+                        <img src="/fotos/over/jennifer.png" alt="Jennifer - Extensions & More" class="w-full h-full object-cover  transition-all duration-700">
+                    </div>
+                    <div class="absolute -bottom-6 -right-6 w-32 h-32 border-r border-b border-gold/30"></div>
+                </div>
+            </div>
+
+            <div class="w-full lg:w-1/2 space-y-8">
+                <h2 class="font-display text-4xl italic leading-tight">
+                    Passie voor <span class="gold-gradient-text">perfectie</span> en haarverlenging.
+                </h2>
+                
+                <div class="space-y-6 text-[#6B6255] leading-loose font-light">
+                    <p>
+                        <strong>Extensions & More</strong> is opgericht door Jennifer en brengt meer dan 15 jaar ervaring in het kappersvak mee. Haar passie ligt bij haarverlenging en ze heeft zich volledig gespecialiseerd in de hoogwaardige hairweave-techniek.
+                    </p>
+                    
+                    <div class="bg-rich-black text-white p-8 border-l-4 border-gold my-10">
+                        <p class="italic">"In tegenstelling tot andere methodes waarbij ringen, lijm of chemicaliën worden gebruikt, blijft het haar met hairweave volledig onbeschadigd."</p>
+                    </div>
+
+                    <p>
+                        Na intensieve trainingen bij <strong>Socap Original</strong> en de <strong>Beauty Academy</strong> besloot Jennifer haar droom te realiseren: een eigen salon met een onderscheidend concept.
+                    </p>
+
+                    <p>
+                        Zo is Extensions & More ontstaan: een plek waar kwaliteit, professionaliteit en persoonlijke aandacht voorop staan. Een veilige en duurzame manier voor wie meer lengte of volume wil, zonder concessies te doen aan de gezondheid van het eigen haar.
+                    </p>
+                </div>
+
+                <div class="pt-8 flex items-center gap-6">
+                    <div class="w-12 h-px bg-gold"></div>
+                    <span class="font-display italic text-xl">Jennifer</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div data-include="sections/afspraak.html"></div>
+    <div data-include="sections/footer.html"></div>
+
+    <script>
+        async function loadIncludes() {
+            const slots = document.querySelectorAll('[data-include]');
+            await Promise.all([...slots].map(async (el) => {
+                const url = el.dataset.include;
+                try {
+                    const res = await fetch(url + '?t=' + Date.now());
+                    if (res.ok) { el.innerHTML = await res.text(); }
+                } catch (e) { console.error('Error:', e); }
+            }));
+        }
+        loadIncludes();
+    </script>
+</body>
+</html>

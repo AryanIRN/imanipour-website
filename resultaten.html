@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultaten | Extensions & More</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { gold: '#C8A96E', 'gold-light': '#E2CFA0', 'rich-black': '#0A0906', cream: '#F5EFE4', 'off-white': '#FAFAF7' },
+                    fontFamily: { display: ['"Cormorant Garamond"', 'serif'], sans: ['Montserrat', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .gold-gradient-text { background: linear-gradient(135deg, #A07C3E 0%, #E2CFA0 45%, #C8A96E 70%, #A07C3E 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block; }
+        #nav-menu.open { display: flex !important; }
+    </style>
+</head>
+<body class="bg-off-white text-rich-black font-sans font-light antialiased">
+
+    <div data-include="layout/nav.html"></div>
+
+    <header class="pt-48 pb-20 bg-rich-black text-center relative overflow-hidden text-white">
+        <div class="w-[88%] max-w-3xl mx-auto relative z-10">
+            <span class="text-gold uppercase tracking-[0.35em] font-medium text-[0.68rem] block mb-5">Vakmanschap in Beeld</span>
+            <h1 class="font-display font-light italic mb-4 text-6xl">
+                Onze <span class="gold-gradient-text">Resultaten</span>
+            </h1>
+            <div class="w-14 h-px bg-gold/50 mx-auto mt-5 mb-8"></div>
+            <p class="text-white/60 font-light leading-loose text-sm max-w-xl mx-auto">
+                Ontdek de kracht van een haar-transformatie. Van subtiele volume-verbeteringen tot adembenemende verlengingen.
+            </p>
+        </div>
+    </header>
+
+    <main class="w-[88%] max-w-6xl mx-auto py-24">
+        
+        <section class="mb-32">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+                <div class="max-w-xl text-center md:text-left">
+                    <h2 class="font-display text-4xl italic mb-4">Instagram <span class="gold-gradient-text">Gallery</span></h2>
+                    <p class="text-gray-500 text-sm leading-loose">Volg ons op <a href="https://www.instagram.com/extensions_more" target="_blank" class="text-gold font-medium border-b border-gold/20">@extensions_more</a> voor dagelijkse inspiratie en de nieuwste transformaties direct uit de salon.</p>
+                </div>
+                <a href="https://www.instagram.com/extensions_more" target="_blank" class="px-8 py-3 bg-rich-black text-white uppercase tracking-widest text-[10px] font-bold hover:bg-gold transition-all duration-500 mx-auto md:mx-0">
+                    Bekijk op Instagram
+                </a>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="aspect-[4/5] bg-cream overflow-hidden group relative">
+                    <img src="/fotos/transformaties/transformatie1.png" alt="Transformatie 1" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-rich-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <i class="fab fa-instagram text-white text-2xl"></i>
+                    </div>
+                </div>
+                <div class="aspect-[4/5] bg-cream overflow-hidden group relative">
+                    <img src="fotos/transformaties/transformatie2.png" alt="Transformatie 2" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-rich-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <i class="fab fa-instagram text-white text-2xl"></i>
+                    </div>
+                </div>
+                <div class="aspect-[4/5] bg-cream overflow-hidden group relative">
+                    <img src="/fotos/transformaties/transformatie3.png" alt="Transformatie 3" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-rich-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <i class="fab fa-instagram text-white text-2xl"></i>
+                    </div>
+                </div>
+                <div class="aspect-[4/5] bg-cream overflow-hidden group relative">
+                    <img src="/fotos/transformaties/transformatie4.png" alt="Transformatie 4" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-rich-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <i class="fab fa-instagram text-white text-2xl"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-cream p-12 md:p-20 relative overflow-hidden shadow-sm">
+            <div class="absolute top-0 right-0 w-96 h-96 bg-gold/5 blur-[120px] rounded-full"></div>
+            
+            <div class="relative z-10">
+                <div class="text-center mb-16">
+                    <h3 class="font-display italic text-3xl mb-4">Wat onze klanten zeggen</h3>
+                    <div class="flex items-center justify-center gap-2 text-gold text-xs">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        <span class="text-rich-black font-bold ml-2">4.9 / 5 op Google</span>
+                    </div>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    <div class="bg-white p-8 border border-gold/10 flex flex-col justify-between shadow-sm">
+                        <p class="text-sm leading-loose italic text-gray-700 mb-6">"Jennifer is een super lieve dame met passie voor haar vak. Ga altijd tevreden de deur uit bij haar en kan haar zeker aanraden als je extensions wilt 😊"</p>
+                        <div class="border-t border-gold/10 pt-4">
+                            <span class="block font-bold text-[10px] uppercase tracking-widest text-rich-black">Emma Zijlstra</span>
+                            <span class="text-[9px] text-gray-400 italic">5/5 • Google Review</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-8 border border-gold/10 flex flex-col justify-between shadow-sm">
+                        <p class="text-sm leading-loose italic text-gray-700 mb-6">"Alleen maar lof voor Jennifer. Ze heeft verstand van wat ze doet en neemt altijd de tijd voor je. Met een volle bos en helemaal gestyled de deur uit."</p>
+                        <div class="border-t border-gold/10 pt-4">
+                            <span class="block font-bold text-[10px] uppercase tracking-widest text-rich-black">N. Wentinck</span>
+                            <span class="text-[9px] text-gray-400 italic">5/5 • Google Review</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-8 border border-gold/10 flex flex-col justify-between shadow-sm">
+                        <p class="text-sm leading-loose italic text-gray-700 mb-6">"Het was weer super gezellig en top werk geleverd. Jennifer is een echte vakvrouw!"</p>
+                        <div class="border-t border-gold/10 pt-4">
+                            <span class="block font-bold text-[10px] uppercase tracking-widest text-rich-black">Irma Nass</span>
+                            <span class="text-[9px] text-gray-400 italic">5/5 • Google Review</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-12">
+                    <a href="https://www.google.com/maps" target="_blank" class="text-[10px] uppercase tracking-widest font-bold text-gold hover:text-rich-black transition-colors">
+                        Bekijk alle Google Reviews <i class="fas fa-external-link-alt ml-1"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div data-include="sections/afspraak.html"></div>
+    <div data-include="sections/footer.html"></div>
+
+    <script>
+        async function loadIncludes() {
+            const slots = document.querySelectorAll('[data-include]');
+            await Promise.all([...slots].map(async (el) => {
+                const url = el.dataset.include;
+                try {
+                    const res = await fetch(url + '?t=' + Date.now());
+                    if (res.ok) { el.innerHTML = await res.text(); }
+                } catch (e) { console.error('Error:', e); }
+            }));
+        }
+
+        loadIncludes().then(() => {
+            const hamburger = document.getElementById('hamburger');
+            const navMenu   = document.getElementById('nav-menu');
+            const bars      = hamburger.querySelectorAll('span');
+
+            hamburger.addEventListener('click', () => {
+                const open = navMenu.classList.toggle('open');
+                bars[0].style.transform = open ? 'rotate(45deg) translate(4.5px, 4.5px)' : '';
+                bars[1].style.opacity   = open ? '0' : '';
+                bars[2].style.transform = open ? 'rotate(-45deg) translate(4.5px, -4.5px)' : '';
+            });
+        });
+    </script>
+</body>
+</html>
