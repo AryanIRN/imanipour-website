@@ -4,24 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Verzorgingstips | Extensions & More</title>
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    colors: { gold: '#C8A96E', 'gold-light': '#E2CFA0', 'rich-black': '#0A0906', cream: '#F5EFE4', 'off-white': '#FAFAF7' },
-                    fontFamily: { display: ['"Cormorant Garamond"', 'serif'], sans: ['Montserrat', 'sans-serif'] }
+                    colors: {
+                        gold: '#C8A96E',
+                        'gold-light': '#E2CFA0',
+                        'gold-dark': '#A07C3E',
+                        cream: '#F5EFE4',
+                        beige: '#EDE3D4',
+                        'off-white': '#FAFAF7',
+                        'rich-black': '#0A0906',
+                    },
+                    fontFamily: {
+                        display: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['Montserrat', 'sans-serif'],
+                    },
                 }
             }
         }
     </script>
+    
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <style>
-        .gold-gradient-text { background: linear-gradient(135deg, #A07C3E 0%, #E2CFA0 45%, #C8A96E 70%, #A07C3E 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block; }
-        .step-number { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 5rem; line-height: 1; opacity: 0.1; position: absolute; top: -1rem; left: -1rem; z-index: 0; color: #C8A96E; }
+        .gold-gradient-text { 
+            background: linear-gradient(135deg, #A07C3E 0%, #E2CFA0 45%, #C8A96E 70%, #A07C3E 100%); 
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+            display: inline-block; 
+        }
+        
+        .step-number { 
+            font-family: 'Cormorant Garamond', serif; 
+            font-style: italic; 
+            font-size: 5rem; 
+            line-height: 1; 
+            opacity: 0.1; 
+            position: absolute; 
+            top: -1rem; 
+            left: -1rem; 
+            z-index: 0; 
+            color: #C8A96E; 
+        }
+        
+        /* Mobiel Menu Fix */
+        @media (max-width: 767px) {
+            #nav-menu.open { display: flex !important; }
+        }
     </style>
 </head>
-<body class="bg-off-white text-rich-black font-sans font-light antialiased">
+<body class="bg-off-white text-rich-black font-sans font-light antialiased overflow-x-hidden">
 
     <div data-include="layout/nav.html"></div>
 
@@ -63,7 +100,7 @@
                 </div>
             </div>
             <div class="w-full md:w-1/2 bg-cream p-12 aspect-square flex items-center justify-center">
-                <img src="/fotos/products/product_group_1.png" alt="Argan & Blue Shampoo Duo" class="max-h-full object-contain drop-shadow-2xl">
+                <img src="fotos/products/product_group_1.png" alt="Argan & Blue Shampoo Duo" class="max-h-full object-contain drop-shadow-2xl">
             </div>
         </section>
 
@@ -81,7 +118,7 @@
                 </div>
             </div>
             <div class="w-full md:w-1/2 bg-cream p-12 aspect-square flex items-center justify-center">
-                <img src="/fotos/products/product_conditioner.png" alt="Argan Conditioner" class="max-h-full object-contain drop-shadow-2xl">
+                <img src="fotos/products/product_conditioner.png" alt="Argan Conditioner" class="max-h-full object-contain drop-shadow-2xl">
             </div>
         </section>
 
@@ -99,7 +136,7 @@
                 </div>
             </div>
             <div class="w-full md:w-1/2 bg-cream p-12 aspect-square flex items-center justify-center">
-                <img src="/fotos/products/product_shake.png" alt="Shake & Protect Spray" class="max-h-full object-contain drop-shadow-2xl">
+                <img src="fotos/products/product_shake.png" alt="Shake & Protect Spray" class="max-h-full object-contain drop-shadow-2xl">
             </div>
         </section>
 
@@ -114,13 +151,13 @@
                 </div>
             </div>
             <div class="w-full md:w-1/2 bg-cream p-12 aspect-square flex items-center justify-center">
-                <img src="/fotos/products/product_leave_in.png" alt="Leave-in Conditioner" class="max-h-full object-contain drop-shadow-2xl">
+                <img src="fotos/products/product_leave_in.png" alt="Leave-in Conditioner" class="max-h-full object-contain drop-shadow-2xl">
             </div>
         </section>
 
     </main>
 
-<section class="bg-rich-black py-20 border-y border-gold/20 relative overflow-hidden">
+    <section class="bg-rich-black py-20 border-y border-gold/20 relative overflow-hidden">
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gold/5 blur-[120px] pointer-events-none"></div>
         
         <div class="w-[88%] max-w-2xl mx-auto text-center relative z-10">
@@ -147,7 +184,41 @@
                 } catch (e) { console.error('Error:', e); }
             }));
         }
-        loadIncludes();
+
+        loadIncludes().then(() => {
+            const hamburger = document.getElementById('hamburger');
+            const navMenu   = document.getElementById('nav-menu');
+            const bars      = hamburger ? hamburger.querySelectorAll('span') : [];
+            
+            // Pakt de huidige pagina naam
+            const currentPath = window.location.pathname.split("/").pop() || "index.html";
+
+            // 1. ACTIVE PAGE INDICATOR FIX
+            document.querySelectorAll('.nav-link').forEach(link => {
+                const linkPath = link.getAttribute('href');
+                if (linkPath === currentPath) {
+                    link.classList.remove('text-off-white', 'text-beige');
+                    link.classList.add('text-gold', 'font-bold', 'border-b', 'border-gold/40', 'pb-1');
+                }
+            });
+
+            // 2. HAMBURGER MENU LOGICA
+            if (hamburger && navMenu) {
+                hamburger.addEventListener('click', () => {
+                    const open = navMenu.classList.toggle('open');
+                    bars[0].style.transform = open ? 'rotate(45deg) translate(4.5px, 4.5px)' : '';
+                    bars[1].style.opacity   = open ? '0' : '';
+                    bars[2].style.transform = open ? 'rotate(-45deg) translate(4.5px, -4.5px)' : '';
+                });
+                
+                navMenu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        navMenu.classList.remove('open');
+                        bars.forEach(b => { b.style.transform = ''; b.style.opacity = ''; });
+                    });
+                });
+            }
+        });
     </script>
 </body>
 </html>
