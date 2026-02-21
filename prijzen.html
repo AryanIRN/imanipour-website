@@ -6,26 +6,7 @@
     <title>Prijzen | Extensions & More</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'desert-taupe': '#907F71', 
-                        'taupe-light': '#D9CFC1',
-                        'taupe-dark': '#5E5249',
-                        'rich-black': '#1A1816',
-                        'soft-cream': '#F5F1ED',
-                        'off-white': '#FAFAF9',
-                    },
-                    fontFamily: {
-                        display: ['"Cormorant Garamond"', 'serif'],
-                        sans: ['Montserrat', 'sans-serif'],
-                    },
-                }
-            }
-        }
-    </script>
+    <script src="js/tailwind-config.js"></script>
     
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -42,15 +23,15 @@
     <div data-include="layout/nav.html"></div>
 
     <header class="pt-48 pb-24 bg-soft-cream text-center relative overflow-hidden">
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-px bg-desert-taupe/30"></div>
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-px bg-taupe-dark/20"></div>
         <div class="w-[88%] max-w-3xl mx-auto">
-            <span class="text-desert-taupe uppercase tracking-[0.45em] font-medium text-[0.6rem] block mb-6">Tarieven</span>
+            <span class="text-taupe-dark uppercase tracking-[0.45em] font-medium text-[0.6rem] block mb-6 opacity-90">Tarieven</span>
             <h1 class="text-rich-black flex flex-col items-center leading-none mb-8" 
                 style="font-size: clamp(2.5rem, 6vw, 4.5rem);">
                 <span class="font-sans font-light uppercase tracking-[0.15em] text-[0.45em] mb-4 opacity-70">Onze</span>
                 <span class="font-display italic font-light">Prijzen</span>
             </h1>
-            <div class="w-12 h-px bg-desert-taupe/30 mx-auto mt-5 mb-8"></div>
+            <div class="w-12 h-px bg-taupe-dark/30 mx-auto mt-5 mb-8"></div>
             <p class="text-taupe-dark font-sans font-light leading-loose text-xs md:text-sm italic text-center max-w-xl mx-auto">
                 Inclusief inzetten, snijden en stylen. Prijzen kunnen variëren op basis van lengte en dikte.
             </p>
@@ -61,7 +42,7 @@
         
         <section class="max-w-2xl mx-auto text-center" data-aos="fade-up">
             <h3 class="font-display italic text-2xl mb-8 text-rich-black">Intake consult</h3>
-            <div class="flex justify-between items-center py-6 px-8 bg-white shadow-sm border-l-2 border-desert-taupe/40">
+            <div class="flex justify-between items-center py-6 px-8 bg-off-white shadow-sm border border-taupe-dark/10">
                 <span class="text-[0.65rem] uppercase tracking-[0.2em] font-bold">Intake Hair Extensions</span>
                 <span class="font-display italic text-2xl text-taupe-dark">Gratis</span>
             </div>
@@ -70,20 +51,20 @@
         <section data-aos="fade-up">
             <div class="text-center mb-12">
                 <h2 class="font-display italic text-4xl text-rich-black">Blend Your Hair</h2>
-                <div class="w-10 h-px bg-desert-taupe/20 mx-auto mt-4"></div>
+                <div class="w-10 h-px bg-taupe-dark/20 mx-auto mt-4"></div>
             </div>
             <div class="grid md:grid-cols-2 gap-10">
-                <div class="bg-white p-10 border border-desert-taupe/10 shadow-sm hover:shadow-xl transition-all duration-700">
+                <div class="bg-off-white p-10 border border-taupe-dark/10 shadow-sm hover:shadow-xl hover:border-taupe-dark/30 transition-all duration-700">
                     <h4 class="font-display italic text-2xl mb-2 text-rich-black">Volume</h4>
                     <p class="text-[9px] uppercase tracking-[0.3em] text-taupe-dark/70 mb-8 font-medium">35 CM | 45 CM | 55 CM</p>
                     <span class="font-display italic text-3xl text-taupe-dark">Vanaf €295,-</span>
-                    <p class="mt-8 text-[11px] text-taupe-dark/60 italic border-t border-desert-taupe/5 pt-6">Inclusief inzetten en knippen.</p>
+                    <p class="mt-8 text-[11px] text-taupe-dark/60 italic border-t border-taupe-dark/10 pt-6">Inclusief inzetten en knippen.</p>
                 </div>
-                <div class="bg-white p-10 border border-desert-taupe/10 shadow-sm hover:shadow-xl transition-all duration-700">
+                <div class="bg-off-white p-10 border border-taupe-dark/10 shadow-sm hover:shadow-xl hover:border-taupe-dark/30 transition-all duration-700">
                     <h4 class="font-display italic text-2xl mb-2 text-rich-black">Volume & Verlengen</h4>
                     <p class="text-[9px] uppercase tracking-[0.3em] text-taupe-dark/70 mb-8 font-medium">35 CM | 45 CM | 55 CM</p>
                     <span class="font-display italic text-3xl text-taupe-dark">Vanaf €330,-</span>
-                    <p class="mt-8 text-[11px] text-taupe-dark/60 italic border-t border-desert-taupe/5 pt-6">Inclusief inzetten en knippen.</p>
+                    <p class="mt-8 text-[11px] text-taupe-dark/60 italic border-t border-taupe-dark/10 pt-6">Inclusief inzetten en knippen.</p>
                 </div>
             </div>
         </section>
@@ -91,25 +72,25 @@
         <section data-aos="fade-up">
             <div class="text-center mb-12">
                 <h2 class="font-display italic text-4xl text-rich-black">Humano Hair</h2>
-                <div class="w-10 h-px bg-desert-taupe/20 mx-auto mt-4"></div>
+                <div class="w-10 h-px bg-taupe-dark/20 mx-auto mt-4"></div>
             </div>
             <div class="grid md:grid-cols-2 gap-10">
-                <div class="bg-white p-10 border border-desert-taupe/10 shadow-sm space-y-8">
+                <div class="bg-off-white p-10 border border-taupe-dark/10 shadow-sm space-y-8">
                     <h4 class="font-display italic text-2xl text-rich-black">Uni kleuren</h4>
                     <p class="text-[9px] uppercase tracking-[0.3em] text-taupe-dark/70 font-medium">40 CM | 55 CM | 65 CM</p>
                     <div class="space-y-5 text-[0.65rem] font-bold uppercase tracking-[0.2em]">
-                        <div class="flex justify-between border-b border-desert-taupe/5 pb-3"><span>40 CM</span><span class="text-taupe-dark">Vanaf €285,-</span></div>
-                        <div class="flex justify-between border-b border-desert-taupe/5 pb-3"><span>55 CM</span><span class="text-taupe-dark">Vanaf €345,-</span></div>
-                        <div class="flex justify-between border-b border-desert-taupe/5 pb-3"><span>65 CM</span><span class="text-taupe-dark">Vanaf €375,-</span></div>
+                        <div class="flex justify-between border-b border-taupe-dark/10 pb-3"><span>40 CM</span><span class="text-taupe-dark">Vanaf €285,-</span></div>
+                        <div class="flex justify-between border-b border-taupe-dark/10 pb-3"><span>55 CM</span><span class="text-taupe-dark">Vanaf €345,-</span></div>
+                        <div class="flex justify-between border-b border-taupe-dark/10 pb-3"><span>65 CM</span><span class="text-taupe-dark">Vanaf €375,-</span></div>
                     </div>
                 </div>
-                <div class="bg-white p-10 border border-desert-taupe/10 shadow-sm space-y-8">
+                <div class="bg-off-white p-10 border border-taupe-dark/10 shadow-sm space-y-8">
                     <h4 class="font-display italic text-2xl text-rich-black">Balayage kleuren</h4>
                     <p class="text-[9px] uppercase tracking-[0.3em] text-taupe-dark/70 font-medium">40 CM | 55 CM | 65 CM</p>
                     <div class="space-y-5 text-[0.65rem] font-bold uppercase tracking-[0.2em]">
-                        <div class="flex justify-between border-b border-desert-taupe/5 pb-3"><span>40 CM</span><span class="text-taupe-dark">Vanaf €325,-</span></div>
-                        <div class="flex justify-between border-b border-desert-taupe/5 pb-3"><span>55 CM</span><span class="text-taupe-dark">Vanaf €385,-</span></div>
-                        <div class="flex justify-between border-b border-desert-taupe/5 pb-3"><span>65 CM</span><span class="text-taupe-dark">Vanaf €400,-</span></div>
+                        <div class="flex justify-between border-b border-taupe-dark/10 pb-3"><span>40 CM</span><span class="text-taupe-dark">Vanaf €325,-</span></div>
+                        <div class="flex justify-between border-b border-taupe-dark/10 pb-3"><span>55 CM</span><span class="text-taupe-dark">Vanaf €385,-</span></div>
+                        <div class="flex justify-between border-b border-taupe-dark/10 pb-3"><span>65 CM</span><span class="text-taupe-dark">Vanaf €400,-</span></div>
                     </div>
                 </div>
             </div>
@@ -146,8 +127,8 @@
             document.querySelectorAll('.nav-link').forEach(link => {
                 const linkPath = link.getAttribute('href');
                 if (linkPath === currentPath) {
-                    link.classList.remove('text-soft-cream/80');
-                    link.classList.add('text-desert-taupe', 'font-medium', 'border-b', 'border-desert-taupe/30', 'pb-1');
+                    link.classList.remove('text-taupe-dark');
+                    link.classList.add('text-rich-black', 'font-medium', 'border-b', 'border-rich-black/30', 'pb-1');
                 }
             });
 

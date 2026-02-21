@@ -3,30 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Extensions & More | Ambachtelijk Vakmanschap</title>
+    <title>Extensions & More</title>
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        // Pantone 17-1311 TCX Desert Taupe als basis
-                        'desert-taupe': '#907F71', 
-                        'taupe-light': '#D9CFC1',
-                        'taupe-dark': '#5E5249',
-                        'rich-black': '#1A1816',
-                        'soft-cream': '#F5F1ED',
-                        'off-white': '#FAFAF9',
-                    },
-                    fontFamily: {
-                        display: ['"Cormorant Garamond"', 'serif'],
-                        sans: ['Montserrat', 'sans-serif'],
-                    },
-                }
-            }
-        }
-    </script>
+<script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/tailwind-config.js"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
@@ -41,20 +21,13 @@
         position: relative;
         margin: 0;
         padding: 0;
-        background-color: #FAFAF9; /* off-white */
+        background-color: #ffffff;
     }
 
-    /* Subtiel verloop in plaats van hard goud */
     .taupe-gradient { 
-        background: linear-gradient(135deg, #5E5249 0%, #907F71 50%, #D9CFC1 100%); 
-    }
-    
-    .text-modern-contrast {
-        color: #1A1816;
-        letter-spacing: 0.05em;
+        background: linear-gradient(135deg, #504a4a 0%, #bfb5b3 50%, #e5e4df 100%); 
     }
 
-    /* Minimalistische Scroll Indicator */
     @keyframes scrollPulse {
         0%   { opacity: 0; transform: translateY(-5px); }
         50%  { opacity: 1; }
@@ -62,9 +35,8 @@
     }
     .scroll-pulse { animation: scrollPulse 3s ease-in-out infinite; }
 
-    /* Navigatie effecten */
     .nav-link { transition: all 0.4s ease; }
-    .nav-link:hover { color: #907F71; }
+    .nav-link:hover { color: #000000; } 
 
     @media (max-width: 767px) {
         #nav-menu.open { display: flex !important; }
@@ -80,7 +52,6 @@
     <div data-include="layout/nav.html"></div>
 
     <div data-include="sections/hero.html"></div>
-    
     <div data-include="sections/intro.html"></div>
     <div data-include="sections/diensten.html"></div>
     <div data-include="sections/merken.html"></div>
@@ -110,7 +81,6 @@
         loadIncludes().then(() => {
             AOS.init({ once: true, offset: 50, duration: 1000 });
 
-            // Swiper configuratie met taupe focus
             new Swiper('.review-swiper', {
                 loop: true,
                 autoplay: { delay: 5000 },
@@ -128,12 +98,11 @@
             const bars      = hamburger ? hamburger.querySelectorAll('span') : [];
             const currentPath = window.location.pathname.split("/").pop() || "index.html";
 
-            // Active indicator aangepast naar Taupe
             document.querySelectorAll('.nav-link').forEach(link => {
                 const linkPath = link.getAttribute('href');
                 if (linkPath === currentPath) {
-                    link.classList.remove('text-off-white', 'text-beige');
-                    link.classList.add('text-desert-taupe', 'font-medium', 'border-b', 'border-desert-taupe/30', 'pb-1');
+                    link.classList.remove('text-taupe-dark');
+                    link.classList.add('text-rich-black', 'font-medium', 'border-b', 'border-rich-black/30', 'pb-1');
                 }
             });
 
@@ -143,7 +112,6 @@
                     bars[0].style.transform = open ? 'rotate(45deg) translate(5px, 5px)' : '';
                     bars[1].style.opacity   = open ? '0' : '';
                     bars[2].style.transform = open ? 'rotate(-45deg) translate(5px, -5px)' : '';
-                    bars.forEach(bar => bar.style.backgroundColor = open ? '#907F71' : '#1A1816');
                 });
             }
         });

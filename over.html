@@ -6,32 +6,12 @@
     <title>Over Jennifer | Extensions & More</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'desert-taupe': '#907F71', 
-                        'taupe-light': '#D9CFC1',
-                        'taupe-dark': '#5E5249',
-                        'rich-black': '#1A1816',
-                        'soft-cream': '#F5F1ED',
-                        'off-white': '#FAFAF9',
-                    },
-                    fontFamily: {
-                        display: ['"Cormorant Garamond"', 'serif'],
-                        sans: ['Montserrat', 'sans-serif'],
-                    },
-                }
-            }
-        }
-    </script>
+    <script src="js/tailwind-config.js"></script>
     
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
-        /* Mobiel Menu Fix */
         @media (max-width: 767px) {
             #nav-menu.open { display: flex !important; }
         }
@@ -42,18 +22,18 @@
     <div data-include="layout/nav.html"></div>
 
     <header class="pt-48 pb-24 bg-soft-cream text-center relative overflow-hidden">
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-px bg-desert-taupe/30"></div>
-        <div class="w-[88%] max-w-3xl mx-auto">
-            <span class="text-desert-taupe uppercase tracking-[0.45em] font-medium text-[0.6rem] block mb-6">Ambachtelijk vakmanschap</span>
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-px bg-taupe-dark/20"></div>
+        <div class="w-[88%] max-w-3xl mx-auto relative z-10">
+            <span class="text-taupe-dark uppercase tracking-[0.45em] font-medium text-[0.6rem] block mb-6 opacity-90">Ambachtelijk vakmanschap</span>
             <h1 class="text-rich-black flex flex-col items-center leading-none mb-8" 
                 style="font-size: clamp(2.5rem, 6vw, 4.5rem);">
                 <span class="font-sans font-light uppercase tracking-[0.15em] text-[0.45em] mb-4 opacity-70">Over</span>
                 <span class="font-display italic font-light">Jennifer</span>
             </h1>
-            <div class="w-12 h-px bg-desert-taupe/30 mx-auto mt-5 mb-8"></div>
+            <div class="w-12 h-px bg-taupe-dark/30 mx-auto mt-5 mb-8"></div>
         </div>
-        <div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.02]">
-            <span class="font-display italic text-[30rem] text-desert-taupe">J</span>
+        <div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.03]">
+            <span class="font-display italic text-[30rem] text-taupe-dark">J</span>
         </div>
     </header>
 
@@ -62,10 +42,10 @@
             
             <div class="w-full lg:w-1/2">
                 <div class="relative">
-                    <div class="aspect-[4/5] bg-soft-cream overflow-hidden border border-desert-taupe/10 shadow-2xl">
+                    <div class="aspect-[4/5] bg-soft-cream overflow-hidden border border-taupe-dark/10 shadow-2xl">
                         <img src="fotos/over/jennifer.png" alt="Jennifer - Extensions & More" class="w-full h-full object-cover transition-all duration-700">
                     </div>
-                    <div class="absolute -bottom-6 -right-6 w-32 h-32 border-r border-b border-desert-taupe/20"></div>
+                    <div class="absolute -bottom-6 -right-6 w-32 h-32 border-r border-b border-taupe-dark/20"></div>
                 </div>
             </div>
 
@@ -76,7 +56,7 @@
                     <span class="font-display italic font-light">ambacht & perfectie</span>
                 </h2>
                 
-                <div class="space-y-6 text-desert-taupe font-sans font-light leading-loose text-sm md:text-base">
+                <div class="space-y-6 text-taupe-dark font-sans font-light leading-loose text-sm md:text-base">
                     <p>
                         <strong class="font-medium text-rich-black">Extensions & More</strong> is het resultaat van jarenlange toewijding. Opgericht door Jennifer, brengt de salon meer dan 15 jaar ervaring in het kappersvak samen met een diepe specialisatie in de hairweave-techniek. Voor Jennifer is haarverlenging geen routineklus, maar een vorm van <strong class="text-rich-black">ambachtelijk werk</strong> waarbij precisie en kwaliteit de boventoon voeren.
                     </p>
@@ -95,7 +75,7 @@
                 </div>
 
                 <div class="pt-8 flex items-center gap-6">
-                    <div class="w-12 h-px bg-desert-taupe/40"></div>
+                    <div class="w-12 h-px bg-taupe-dark/30"></div>
                     <span class="font-display italic text-2xl text-rich-black">Jennifer</span>
                 </div>
             </div>
@@ -128,12 +108,11 @@
             
             const currentPath = window.location.pathname.split("/").pop() || "index.html";
 
-            // Active indicator fix (Aangepast naar Desert Taupe)
             document.querySelectorAll('.nav-link').forEach(link => {
                 const linkPath = link.getAttribute('href');
                 if (linkPath === currentPath) {
-                    link.classList.remove('text-soft-cream/80');
-                    link.classList.add('text-desert-taupe', 'font-medium', 'border-b', 'border-desert-taupe/30', 'pb-1');
+                    link.classList.remove('text-taupe-dark');
+                    link.classList.add('text-rich-black', 'font-medium', 'border-b', 'border-rich-black/30', 'pb-1');
                 }
             });
 
