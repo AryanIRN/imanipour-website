@@ -44,6 +44,52 @@
 
     .scrollbar-hide::-webkit-scrollbar { display: none; }
     .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
+
+/* De animatie die de container verschuift */
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.marquee-container {
+    display: flex;
+    width: max-content;
+    animation: marquee 30s linear infinite;
+}
+
+/* De wrapper die de overloop verbergt en de zij-schaduwen bevat */
+.marquee-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.marquee-wrapper:hover .marquee-container {
+    animation-play-state: paused;
+}
+
+/* De schaduw/fade aan de zijkanten */
+.marquee-wrapper::before,
+.marquee-wrapper::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 15%; /* Gebruik percentage voor betere responsive werking */
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.marquee-wrapper::before {
+    left: 0;
+    background: linear-gradient(to right, #000000, transparent);
+}
+
+.marquee-wrapper::after {
+    right: 0;
+    background: linear-gradient(to left, #000000, transparent);
+}
 </style>
 </head>
 
@@ -59,6 +105,7 @@
     <div data-include="sections/salon.html"></div>
     <div data-include="sections/reviews.html"></div>
     <div data-include="sections/afspraak.html"></div>
+    <div data-include="sections/faq.html"></div>
     <div data-include="sections/footer.html"></div>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
